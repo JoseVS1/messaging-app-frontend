@@ -63,9 +63,11 @@ export const ChatPage = () => {
         })
       });
       const data = await response.json();
+      console.log(data)
 
       if (response.ok) {
         setMessageContent("");
+        setMessages(prevMessages => [...prevMessages, data.message]);
       }
     } catch (err) {
       setErrors(err.message);
@@ -86,7 +88,7 @@ export const ChatPage = () => {
       <ul>
         {messages.map(message => (
           <div key={message.id} className="message">
-            <h2>{message.sender.profile.displayName ? message.sender.profile.displayName : message.sender.username}</h2>
+            <h2>{message.sender.profile && message.sender.profile.displayName ? message.sender.profile.displayName : message.sender.username}</h2>
             <p>{message.content}</p>
           </div>
         ))}

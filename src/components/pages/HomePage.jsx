@@ -32,15 +32,20 @@ export const HomePage = () => {
       
       <h1>Chat App</h1>
 
-      {user && <h2>Welcome, { user.profile.displayName ? user.profile.displayName : user.username }</h2>}
+      {user && <h2>Welcome, { user.profile && user.profile.displayName ? user.profile.displayName : user.username }</h2>}
 
       <h2>Users:</h2>
 
-      <ul>
-        {users && users.map(user => (
-          <Link to={`/chats/${user.id}`} key={user.id}>{user.username}</Link>
-        ))}
-      </ul>
+      {users && users.length > 0 ? (
+        <ul>
+          {users.map(user => (
+            <Link to={`/chats/${user.id}`} key={user.id}>{user.username}</Link>
+          ))}
+        </ul>
+      ) : (
+        <h2>There are no users</h2>
+      )}
+      
 
     </div>
   )

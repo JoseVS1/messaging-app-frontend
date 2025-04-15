@@ -9,7 +9,7 @@ export const ProfilePage = () => {
     <>
         {user ? (
             <>
-                <h2>Display name: {user.profile.displayName ? user.profile.displayName : user.username} </h2>
+                <h2>Display name: {user.profile && user.profile.displayName ? user.profile.displayName : user.username} </h2>
                 <h2>Created at: {user.profile.createdAt}</h2>
                 <h2>Profile picture:</h2>
                 <img className="profile-picture" src={user.profile.avatarUrl ? user.profile.avatarUrl : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="Profile picture" />
