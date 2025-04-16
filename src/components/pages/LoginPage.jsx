@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../../context/UserContext";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Errors } from "../../components/Errors"
 
 export const LoginPage = () => {
@@ -58,20 +58,29 @@ export const LoginPage = () => {
     });
   }
   return (
-    <>
-      <h1>Login</h1>
+    <div className="login-page">
+      <div className="login-card">
+        <h1>Login</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email: </label>
-        <input type="email" name="email" id="email" value={formData.email} onChange={handleInputChange} required />
-        
-        <label htmlFor="password">Password: </label>
-        <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange} required />
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="email">Email: </label>
+            <input type="email" name="email" id="email" value={formData.email} onChange={handleInputChange} required />
+          </div>
 
-        <button type="submit">Log in</button>
-      </form>
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange} required />
+          </div>      
 
-      {errors.length > 0 && <Errors errors={errors} />}
-    </>
+          <button type="submit">Log in</button>
+        </form>
+
+        <span>Don't have an account? <span className="link"><Link to="/signup">Create one</Link></span>.</span>
+
+        {errors.length > 0 && <Errors errors={errors} />}
+      </div>
+      
+    </div>
   )
 }
