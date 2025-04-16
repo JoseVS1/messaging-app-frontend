@@ -51,6 +51,12 @@ html {
     box-sizing: border-box;
 }
 
+/* ERRORS */
+
+.error {
+    color: red;
+}
+
 /* NAVBAR */
 
 nav {
