@@ -51,11 +51,32 @@ html {
     box-sizing: border-box;
 }
 
+/* NAVBAR */
+
+nav {
+    padding: 0 5rem;
+    height: 6rem;
+    font-size: 2rem;
+    border: 1px solid #E5E7EB;
+}
+
+nav ul {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul div:nth-child(2) {
+    display: flex;
+    gap: 2rem;
+}
+
 /* LOGIN PAGE */
 
 .login-page {
     background-color: #F3F4F6;
-    height: 100vh;
+    height: 94.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,11 +144,11 @@ a {
     text-decoration: none;
 }
 
-.login-card .link :hover {
+.link :hover {
     color: #5e57e5;
 }
 
-.login-card .link {
+.link {
     color: #4F46E5;
 }
 

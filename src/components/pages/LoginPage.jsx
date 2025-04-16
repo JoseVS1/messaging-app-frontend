@@ -71,14 +71,14 @@ export const LoginPage = () => {
           <div>
             <label htmlFor="password">Password: </label>
             <input type="password" name="password" id="password" value={formData.password} onChange={handleInputChange} required />
+            
+            {errors.length > 0 && <Errors errors={errors} />}
           </div>      
 
           <button type="submit">Log in</button>
         </form>
 
         <span>Don't have an account? <span className="link"><Link to="/signup">Create one</Link></span>.</span>
-
-        {errors.length > 0 && <Errors errors={errors} />}
       </div>
       
     </div>

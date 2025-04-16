@@ -15,29 +15,39 @@ export const Navbar = () => {
   return (
     <nav>
         <ul>
-            <li>
-                <NavLink to="/">Home</NavLink>
-            </li>
+            <div>
+              <li>
+                <span className="link">
+                  <NavLink to="/">Home</NavLink>
+                </span>
+              </li>
+            </div>
 
             {user ? (
-              <>
+              <div>
                 <li>
-                  <NavLink to="/profile">Profile</NavLink>
+                  <span className="link">
+                    <NavLink to="/profile">Profile</NavLink>
+                  </span>
                 </li>
 
                 <li>
                   <button onClick={handleLogout}>Log out</button>
                 </li>
-              </>
+              </div>
             ) : (
-              <>
+              <div>
                 <li>
-                  <NavLink to="/signup">Sign up</NavLink>
+                  <span className="link">
+                    <NavLink to="/signup">Sign up</NavLink>
+                  </span>
                 </li>
                 <li>
-                  <NavLink to="/login">Log in</NavLink>
+                  <span className="link">
+                    <NavLink to="/login">Log in</NavLink>
+                  </span>
                 </li>
-              </>
+              </div>
             )}
         </ul>
     </nav>
