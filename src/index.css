@@ -301,12 +301,82 @@ a {
     font-size: 2rem;
 }
 
+/* PROFILE PAGE */
+
+.profile-page {
+    background-color: #F9FAFB;
+    height: 94.5vh;
+    padding: 5rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profile-page .profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 5rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.profile-page h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.profile-page span {
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.profile-page .profile-picture {
+    height: 15rem;
+    align-self: center;
+    border-radius: 50%;
+}
+
+.profile-page p {
+    font-size: 2rem;
+}
+
+.profile-page button {
+    padding: 1rem 0;
+    cursor: pointer;
+    background-color: #4F46E5;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    border: none;
+    border-radius: 8px;
+}
+
+.profile-page button a {
+    display: block;
+}
+
+.profile-page button:hover {
+    background-color: #5e57e5;
+}
+
 /* PHONE */
 @media (max-width: 680px) {
     /* LOGIN AND SIGNUP PAGES */
 
     .login-card, .signup-card {
         width: 45rem;
+    }
+
+    /* PROFILE PAGE */
+    .profile-page {
+        padding: 0 2rem;
+    }
+
+    .profile-page .profile-card {
+        padding: 5rem 4rem;
     }
 }
 
@@ -321,8 +391,4 @@ a {
     .login-card, .signup-card {
         width: 50rem;
     }
-}
-
-.profile-picture {
-    height: 50px;
 }
