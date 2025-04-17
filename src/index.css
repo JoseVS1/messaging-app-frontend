@@ -244,6 +244,11 @@ a {
     color: #6366F1;
 }
 
+.home-page .users-container {
+    display: flex;
+    justify-content: center;
+}
+
 .home-page .users-card {
     min-height: 20rem;
     background-color: white;

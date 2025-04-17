@@ -35,23 +35,26 @@ export const HomePage = () => {
       </div>
 
       <h2>Users</h2>
-
-      <div className="users-card">
-        {users && users.length > 0 ? (
-          <ul>
-            {users.map(user => (
-              <Link className="user-card" key={user.id} to={`/chats/${user.id}`}>
-                <img className="profile-picture" src={user.profile && user.profile.avatarUrl ? user.profile.avatarUrl : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="Profile picture" />
-                <h3>{user.username}</h3>
-              </Link>
-            ))}
-          </ul>
-        ) : (
-          <div className="empty-users-container">
-            <h2>There are no users...</h2>
-          </div>
-        )}
+      
+      <div className="users-container">
+        <div className="users-card">
+          {users && users.length > 0 ? (
+            <ul>
+              {users.map(user => (
+                <Link className="user-card" key={user.id} to={`/chats/${user.id}`}>
+                  <img className="profile-picture" src={user.profile && user.profile.avatarUrl ? user.profile.avatarUrl : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="Profile picture" />
+                  <h3>{user.username}</h3>
+                </Link>
+              ))}
+            </ul>
+          ) : (
+            <div className="empty-users-container">
+              <h2>There are no users...</h2>
+            </div>
+          )}
+        </div>
       </div>
+      
     </div>
   )
 }
