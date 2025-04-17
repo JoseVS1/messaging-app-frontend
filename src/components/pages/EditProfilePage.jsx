@@ -58,27 +58,37 @@ export const EditProfilePage = () => {
     };
 
   return (
-    <>
+    <div className="edit-profile-page">
         {errors.length > 0 && <Errors errors={errors} />}
 
         {user ? (
-            <>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="displayName">Display name: </label>
-                    <input type="text" value={formData.displayName} onChange={handleInputChange} name="displayName" id="displayName"/>
+            <div className="edit-profile-card">
+                <div className="heading-container">
+                    <h1>Edit profile</h1>
+                </div>
 
-                    <label htmlFor="avatarUrl">Profile picture URL: </label>
-                    <input type="text" value={formData.avatarUrl} onChange={handleInputChange} name="avatarUrl" id="avatarUrl" />
+                <form className="edit-profile-form" onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="displayName">Display name: </label>
+                        <input type="text" value={formData.displayName} onChange={handleInputChange} name="displayName" id="displayName"/>
+                    </div>
+                   
+                    <div>
+                        <label htmlFor="avatarUrl">Profile picture URL: </label>
+                        <input type="text" value={formData.avatarUrl} onChange={handleInputChange} name="avatarUrl" id="avatarUrl" />
+                    </div>
 
-                    <label htmlFor="bio">Bio: </label>
-                    <textarea name="bio" id="bio" value={formData.bio} onChange={handleInputChange}></textarea>
+                    <div>
+                        <label htmlFor="bio">Bio: </label>
+                        <textarea name="bio" id="bio" value={formData.bio} onChange={handleInputChange}></textarea>
+                    </div>
 
                     <button type="submit">Submit</button>
                 </form>                
-            </>
+            </div>
         ) : (
             <h1>Loading...</h1>
         )}
-    </>
+    </div>
   )
 }
