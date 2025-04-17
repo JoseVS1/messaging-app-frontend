@@ -26,13 +26,22 @@ export const Navbar = () => {
             {user ? (
               <div>
                 <li>
-                  <span className="link">
-                    <NavLink to="/profile">Profile</NavLink>
-                  </span>
+                  <div className="dropdown">
+                    <span className="dropbtn profile-link">{ user.profile && user.profile.displayName ? user.profile.displayName : user.username }</span>
+                    <div className="dropdown-content">
+                      <span className="link">
+                        <NavLink to="/profile">Profile</NavLink>
+                      </span>
+                    </div>
+                  </div>
+
+                  
                 </li>
 
                 <li>
-                  <button onClick={handleLogout}>Log out</button>
+                  <span className="link" onClick={handleLogout}>
+                    <a href="">Log out</a>
+                  </span>
                 </li>
               </div>
             ) : (
