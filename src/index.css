@@ -45,6 +45,7 @@ table {
 html {
     font-size: 62.5%;
     font-family: "Roboto", sans-serif;
+    color: #111827;
 }
 
 * {
@@ -58,7 +59,7 @@ a, a:visited, a:hover, a:active {
 /* ERRORS */
 
 .error {
-    color: red;
+    color: #DC2626;
 }
 
 /* NAVBAR */
@@ -68,6 +69,7 @@ nav {
     height: 6rem;
     font-size: 2rem;
     border: 1px solid #E5E7EB;
+    font-weight: bold;
 }
 
 nav ul {
@@ -97,6 +99,7 @@ nav .profile-link:hover {
 .dropbtn {
     padding: 1.6rem;
     height: 100%;
+    cursor: default;
 }
 
 .dropdown {
@@ -108,6 +111,7 @@ nav .profile-link:hover {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
+    border-radius: 8px;
     min-width: 16rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -115,7 +119,7 @@ nav .profile-link:hover {
 }
 
 .dropdown-content a {
-    padding: 12px 16px;
+    padding: 1.2rem 1.6rem;
     text-decoration: none;
     display: block;
 }
@@ -212,6 +216,85 @@ a {
     color: #4F46E5;
 }
 
+/* HOME PAGE */
+
+.home-page {
+    background-color: #F3F4F6;
+    height: 94.5vh;
+    padding: 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.home-page h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.home-page .heading-container {
+    display: flex;
+    justify-content: center;
+}
+
+.home-page h2:first-of-type {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6366F1;
+}
+
+.home-page .users-card {
+    min-height: 20rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    width: fit-content;
+}
+
+.home-page .users-card ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.home-page .empty-users-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page .empty-users-container h2 {
+    font-size: 2.5rem;
+}
+
+.home-page .user-card {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    width: fit-content;
+}
+
+.home-page .user-card:hover {
+    background-color: rgba(228, 228, 228, 0.427);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.home-page .user-card .profile-picture {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.home-page .user-card h3 {
+    font-size: 2rem;
+}
 
 /* PHONE */
 @media (max-width: 680px) {
