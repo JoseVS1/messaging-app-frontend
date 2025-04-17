@@ -59,8 +59,6 @@ export const EditProfilePage = () => {
 
   return (
     <div className="edit-profile-page">
-        {errors.length > 0 && <Errors errors={errors} />}
-
         {user ? (
             <div className="edit-profile-card">
                 <div className="heading-container">
@@ -81,6 +79,8 @@ export const EditProfilePage = () => {
                     <div>
                         <label htmlFor="bio">Bio: </label>
                         <textarea name="bio" id="bio" value={formData.bio} onChange={handleInputChange}></textarea>
+                    
+                        {errors.length > 0 && <Errors errors={errors} />}
                     </div>
 
                     <button type="submit">Submit</button>

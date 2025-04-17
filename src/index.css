@@ -70,6 +70,12 @@ nav {
     font-size: 2rem;
     border: 1px solid #E5E7EB;
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
 }
 
 nav ul {
@@ -114,8 +120,8 @@ nav .profile-link:hover {
     border-radius: 8px;
     min-width: 16rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 3rem;
+    top: 3.5rem;
+    z-index: 3;
 }
 
 .dropdown-content a {
@@ -126,6 +132,7 @@ nav .profile-link:hover {
 
 .dropdown-content a:hover {
     background-color: #ddd;
+    border-radius: 8px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -221,7 +228,7 @@ a {
 .home-page {
     background-color: #F3F4F6;
     height: 94.5vh;
-    padding: 5rem 5rem;
+    padding: 10rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -306,7 +313,7 @@ a {
 .profile-page {
     background-color: #F9FAFB;
     height: 94.5vh;
-    padding: 5rem 5rem;
+    padding: 10rem 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -367,7 +374,7 @@ a {
 .edit-profile-page {
     background-color: #F9FAFB;
     height: 94.5vh;
-    padding: 5rem 5rem;
+    padding: 10rem 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -442,6 +449,121 @@ a {
     background-color: #F3F4F6;
     height: 10rem;
 }
+
+/* CHAT PAGE */
+
+.chat-page {
+    background-color: #E5E7EB;
+    padding: 18rem 5rem 11rem 5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.user-header {
+    background-color: #6366F1;
+    display: flex;
+    position: fixed;
+    top: 6rem;
+    padding: 0 5rem;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    gap: 2rem;
+    color: white;
+    z-index: 1;
+}
+
+.user-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.user-header .profile-picture {
+    height: 60%;
+    border-radius: 50%;
+}
+
+.chat-form {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: #6366F1;
+    height: 12rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-form textarea {
+    width: 80%;
+    height: 6rem;
+    border-radius: 8px;
+    border: 1px solid #6b6b6b;
+    background-color: #F3F4F6;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.chat-form button {
+    padding: 2rem;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-form button:hover {
+    background-color: #cbccf5;
+}
+
+.message-list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3rem;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.message .profile-picture {
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.message h2 {
+    font-size: 3rem;
+}
+
+.message p {
+    font-size: 2rem;
+    color: #4f4f4f;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 1rem 3rem;
+    background-color: white;
+    border-radius: 16px;
+    border: none;
+
+}
+
+.own-message {
+    align-self: flex-end;
+}
+
+.own-message p {
+    background-color: #595cf2;
+    color: white;
+}
+
 
 /* PHONE */
 @media (max-width: 680px) {

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router"
 import UserContext from "../../context/UserContext";
 import { Errors } from "../Errors";
@@ -9,6 +9,7 @@ export const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [messageContent, setMessageContent] = useState("");
   const {errors, setErrors} = useContext(UserContext);
+  const bottomRef = useRef(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,7 +45,11 @@ export const ChatPage = () => {
     }
 
     fetchMessages();
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "auto" });
+  }, [messages]);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -74,24 +79,30 @@ export const ChatPage = () => {
   }
 
   return (
-    <div>
-      {errors.length > 0 && <Errors errors={errors} />}
+    <>
+      <div className="user-header">
+          <img className="profile-picture" src={user.profile && user.profile.avatarUrl ? user.profile.avatarUrl : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="Profile picture" />
+          <h1>{user.profile ? user.profile.displayName : user.username}</h1>
+        </div>
 
-      <h1>{user.profile ? user.profile.displayName : user.username}</h1>
+      <div className="chat-page">
+        {errors.length > 0 && <Errors errors={errors} />}
+        
+        <ul className="message-list">
+          {messages.map(message => (
+            <div key={message.id} className={`message ${message.sender.username !== user.username ? "own-message" : ""}`}>
+              {message.sender.username === user.username && <img className="profile-picture" src={user.profile && user.profile.avatarUrl ? user.profile.avatarUrl : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt="Profile picture" />}
+              <p>{message.content}</p>
+            </div>
+          ))}
+          <div ref={bottomRef} />
+        </ul>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <textarea onChange={(e) => setMessageContent(e.target.value)} value={messageContent} name="content" id="content" required></textarea>
-        <button type="submit">Send</button>
+      <form className="chat-form" onSubmit={handleSubmit}>
+          <textarea onChange={(e) => setMessageContent(e.target.value)} value={messageContent} name="content" id="content" required></textarea>
+          <button type="submit">Send</button>
       </form>
-      
-      <ul>
-        {messages.map(message => (
-          <div key={message.id} className="message">
-            <h2>{message.sender.profile && message.sender.profile.displayName ? message.sender.profile.displayName : message.sender.username}</h2>
-            <p>{message.content}</p>
-          </div>
-        ))}
-      </ul>
-    </div>
+    </>
   )
 }
