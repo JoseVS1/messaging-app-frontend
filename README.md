@@ -109,4 +109,5 @@ The application uses a custom CSS file with:
 - date-fns - Date formatting
 
 ## License
-[MIT License](LICENSE)
+
+MIT License
