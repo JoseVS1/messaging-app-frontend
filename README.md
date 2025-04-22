@@ -2,11 +2,10 @@
 A modern React-based messaging application with real-time chat capabilities, user authentication, and profile management.
 
 ## Overview
-Wisp Frontend is a single-page application built with React and Vite that provides an intuitive interface for messaging between users. It features user authentication, profile management, and real-time chat capabilities with a responsive design.
+Wisp Frontend is a single-page application built with React and Vite that provides an intuitive interface for messaging between users. It features user authentication, profile management, and chat capabilities with a responsive design.
 
 ## Features
 - User Authentication: Secure signup and login functionality
-- Real-time Messaging: Instant message exchange between users
 - Profile Management: View and edit user profiles with custom display names, bios, and avatars
 - User Directory: Browse all registered users to start conversations
 - Protected Routes: Authentication-based access control
@@ -24,7 +23,7 @@ Wisp Frontend is a single-page application built with React and Vite that provid
 1. Clone the repository:
    ```
    git clone https://github.com/JoseVS1/messaging-app-frontend.git
-   cd wisp-frontend
+   cd messaging-app-frontend
    ```
 
 2. Install dependencies:
