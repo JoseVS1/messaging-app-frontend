@@ -70,7 +70,7 @@ Wisp Frontend is a single-page application built with React and Vite that provid
 
 ## Pages and Components
 - **HomePage**: User directory to find and start conversations
-- **ChatPage**: Real-time messaging interface with a specific user
+- **ChatPage**: Messaging interface with a specific user
 - **ProfilePage**: View user profile details
 - **EditProfilePage**: Update profile information
 - **LoginPage/SignupPage**: User authentication forms
